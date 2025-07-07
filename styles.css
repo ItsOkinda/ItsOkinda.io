@@ -1,86 +1,248 @@
+/* General Body & Root Styles - The foundation of a clean look */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Modern, clean sans-serif stack */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f9f9f9; /* A very light, almost white background */
+    color: #333; /* Soft black for readability */
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
 }
 
+/* Container for main content - Keeps it organized */
+main {
+    max-width: 960px; /* Slightly wider for more content */
+    margin: 25px auto; /* Center with more vertical space */
+    padding: 25px;
+    background-color: #fff; /* Crisp white content background */
+    border-radius: 8px; /* Smooth, modern rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* More pronounced, soft shadow */
+}
+
+/* Header Styles - Strong and clear */
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1.5em 0;
+    background-color: #2c3e50; /* Deep, professional dark blue */
+    color: #ecf0f1; /* Light grey/blue for contrast */
+    padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25); /* Clearer shadow */
+    margin-bottom: 25px; /* Space before main content */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    font-weight: 300;
+    font-size: 3em; /* Bold statement */
+    letter-spacing: 1.5px;
+    font-weight: 700; /* Extra bold */
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* Navigation - Functional and accessible */
+nav {
+    background-color: #34495e; /* Slightly lighter dark blue than header */
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Stays visible when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it's on top */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
-    background-color: #34495e;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0;
+    margin: 0 18px; /* More space between links */
 }
 
 nav ul li a {
-    color: white;
+    color: #ecf0f1; /* Matches header text color */
     text-decoration: none;
-    padding: 1em 1.5em;
-    display: block;
-    transition: background-color 0.3s ease;
+    font-weight: 600; /* Semi-bold */
+    font-size: 1.05em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #2c3e50;
+    background-color: #2980b9; /* A clean blue for hover */
+    color: #fff;
 }
 
-main {
-    padding: 2em;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-top: 2em;
-    margin-bottom: 5em;
+/* Section Styling - Clear demarcation for content blocks */
+section {
+    margin-bottom: 40px; /* More space between sections */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Lighter shadow for sections */
 }
 
+section:last-child {
+    margin-bottom: 0; /* No extra margin on the last section */
+}
+
+section h2 {
+    color: #2c3e50; /* Matches header color for strong headings */
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3498db; /* Prominent blue underline */
+    display: inline-block;
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+section h3 {
+    color: #34495e; /* Subheadings matching nav color */
+    font-size: 1.6em;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+section h4 { /* For specific coursework/certifications */
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs & Lists - Optimized for readability */
+p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+ul {
+    list-style: square; /* A subtle, clear bullet */
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Specific Section Layouts */
+.bio-section .contact-info {
+    font-size: 1.1em;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd; /* Dotted line for contact separation */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for skills */
+    gap: 20px; /* Space between skill categories */
+}
+
+.skills-grid div {
+    background-color: #fcfcfc;
+    padding: 15px;
+    border-left: 4px solid #3498db; /* Accent border */
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+}
+
+.project-item, .experience-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ccc; /* Dotted separator for items */
+}
+
+.project-item:last-child, .experience-item:last-child {
+    border-bottom: none;
+}
+
+.project-item h3, .experience-item h3 {
+    color: #007bff; /* Project/Experience titles in a vibrant blue */
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.experience-item .date {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+    display: block; /* Ensures date is on its own line */
+}
+
+/* Links - Consistent and clear */
+a {
+    color: #3498db; /* A bright, professional blue for all links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9; /* Darken on hover */
+    text-decoration: underline;
+}
+
+/* Footer - Simple and informative */
 footer {
-    background-color: #2c3e50;
-    color: white;
     text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     font-size: 0.9em;
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.25);
 }
 
-/* Add some responsive design */
+/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-    }
-    
-    nav ul li a {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
     main {
-        padding: 1em;
-        margin-top: 1em;
-        margin-bottom: 4em;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section h3 {
+        font-size: 1.4em;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Stack skills vertically on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav ul {
+        flex-direction: column; /* Stack nav links vertically */
+    }
+    nav ul li {
+        margin: 5px 0;
     }
 }
